@@ -4,7 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:riderapp/AllScreens/loginScreen.dart';
 import 'package:riderapp/AllWidgets/progressDialog.dart';
 import 'package:riderapp/main.dart';
-import 'package:riderapp/AllScreens/mainscreen.dart';
+import 'package:riderapp/AllScreens/mainscreen.dart' as homeScreen;
 
 class RegistrationScreen extends StatelessWidget {
   static const String idScreen = "register";
@@ -13,7 +13,6 @@ class RegistrationScreen extends StatelessWidget {
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController phoneTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
-
 
 
   @override
@@ -182,7 +181,7 @@ class RegistrationScreen extends StatelessWidget {
       };
       usersRef.child(firebaseUser.uid).set(userDataMap);
       displayToastMessage("Congratulations, your account has been created.", context);
-      Navigator.pushNamedAndRemoveUntil(context, MainScreen.idScreen, (route) => false);
+      Navigator.pushNamedAndRemoveUntil(context, homeScreen.MainScreen.idScreen, (route) => false);
     }
     else{
       // Error occurred. Display error message
@@ -194,6 +193,5 @@ class RegistrationScreen extends StatelessWidget {
   displayToastMessage(String message, BuildContext context){
     Fluttertoast.showToast(msg: message);
   }
-
 }
 

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:riderapp/AllWidgets/progressDialog.dart';
 import 'package:riderapp/main.dart';
-import 'package:riderapp/AllScreens/mainscreen.dart';
+import 'package:riderapp/AllScreens/mainscreen.dart' as homeScreen;
 import 'package:riderapp/AllScreens/registrationScreen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -138,7 +138,7 @@ class LoginScreen extends StatelessWidget {
       // Save user info to database
       usersRef.child(firebaseUser.uid).once().then((DatabaseEvent snap){
         if (snap != null){
-          Navigator.pushNamedAndRemoveUntil(context, MainScreen.idScreen, (route) => false);
+          Navigator.pushNamedAndRemoveUntil(context, homeScreen.MainScreen.idScreen, (route) => false);
           displayToastMessage("You are logged-in.", context);
         }
         else {
@@ -156,5 +156,8 @@ class LoginScreen extends StatelessWidget {
     displayToastMessage(String message, BuildContext context){
       Fluttertoast.showToast(msg: message);
   }
+}
+
+class MainScreen {
 }
 

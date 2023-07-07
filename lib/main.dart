@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:riderapp/AllScreens/loginScreen.dart';
-import 'package:riderapp/AllScreens/mainscreen.dart';
+import 'package:riderapp/AllScreens/mainscreen.dart' as homeScreen;
 import 'package:riderapp/AllScreens/registrationScreen.dart';
 
 void main() async{
@@ -27,11 +27,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: LoginScreen.idScreen,
+      initialRoute: homeScreen.MainScreen.idScreen,
       routes: {
         RegistrationScreen.idScreen: (context) => RegistrationScreen(),
         LoginScreen.idScreen: (context) => LoginScreen(),
-        MainScreen.idScreen: (context) => MainScreen(),
+        homeScreen.MainScreen.idScreen: (context) => homeScreen.MainScreen(),
       },
       debugShowCheckedModeBanner: false,
     );
