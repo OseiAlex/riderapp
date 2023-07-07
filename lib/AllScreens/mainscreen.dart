@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:html';
+// import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -108,7 +108,7 @@ class _MainScreenState extends State<MainScreen> {
               newGoogleMapController = controller;
 
               setState(() {
-                bottomPaddingOfMap = 265.0;
+                bottomPaddingOfMap = 300.0;
               });
 
               locatePosition();
